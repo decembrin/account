@@ -82,21 +82,15 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name_plural = _('users')
 
     def __str__(self):
-
-        return self.get_full_name()
+        return self.get_username()
 
     def __unicode__(self):
-        
-        return self.get_full_name()
-
-    def get_full_name(self):
-        """
-        Returns the first_name plus the last_name, with a space in between.
-        """
-        return full_name = '{0} {1}'.format(self.first_name, self.last_name)
+        return self.get_username()
 
     def get_short_name(self):
-        "Returns the short name for the user."
+        """
+        Returns the short name for the user.
+        """
         return self.first_name
 
     def email_user(self, subject, message, from_email=None, **kwargs):
