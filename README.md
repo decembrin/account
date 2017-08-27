@@ -1,2 +1,2 @@
 # account
-Authorization application for Django.
+Custom authorization application for Django.
